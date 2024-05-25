@@ -25,9 +25,9 @@ jobs:
           TAGS=("latest" "nightly")
           PLATFORMS=("linux/amd64" "linux/arm/v7" "linux/arm64")
 
-          for TAG in $TAGS; do
-            for PLATFORM in $PLATFORMS; do 
-              echo "FROM --platform=\${PLATFORM} ${SRC_IMAGE}:${TAG}"
+          for TAG in "${TAGS[@]}"; do
+            for PLATFORM in "${PLATFORMS[@]}"; do 
+              echo "FROM --platform=${PLATFORM} ${SRC_IMAGE}:${TAG}"
             done
           done
           

@@ -7,28 +7,10 @@ jobs:
   mirror:
     runs-on: ubuntu-latest
     steps:
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-        
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Login to DockerHub
-        run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p  ${{ secrets.DOCKERHUB_TOKEN }}
-      
       - name: Mirror
         run: |
-          SRC_IMAGE=ghcr.io/gethomepage/homepage
-          TARGET_IMAGE=litetex/homepage
-          
-          TAGS=("latest" "nightly")
-
-          for TAG in "${TAGS[@]}"; do
-            echo "FROM ${SRC_IMAGE}:${TAG}" > Dockerfile.tmp
-            docker buildx build \
-              --push \
-              --platform "linux/amd64,linux/arm/v7,linux/arm64" \
-              --tag "${TARGET_IMAGE}:${TAG}" \
-              --file ./Dockerfile.tmp .
-          done
-          
+          docker run --rm \
+            -e DOCKERHUB_USER=${{ secrets.DOCKERHUB_USERNAME }} \
+            -e DOCKERHUB_TOKEN=${{ secrets.DOCKERHUB_TOKEN }} \
+            -v ./sync.yml:/config/sync.yml:ro \
+            regclient/regsync -c /config/sync.yml once

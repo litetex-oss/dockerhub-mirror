@@ -9,7 +9,6 @@ defaults:
     min: 100
     retry: 15m
   parallel: 2
-  interval: 60m
 sync:
   - source: ghcr.io/gethomepage/homepage
     target: litetex/homepage

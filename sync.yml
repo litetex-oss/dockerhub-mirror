@@ -18,4 +18,4 @@ sync:
       allow:
       - "latest"
       - "nightly"
-      - "v[0-9\.]*"
+      - "v[0-9\\.]*"

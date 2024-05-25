@@ -19,69 +19,19 @@ jobs:
       - name: Mirror
         run: |
           SRC_IMAGE=ghcr.io/gethomepage/homepage
+          TARGET_IMAGE=litetex/homepage
+          
           TAGS=("latest" "nightly")
           PLATFORMS=("linux/amd64" "linux/arm/v7" "linux/arm64")
 
           for TAG in "${TAGS[@]}"; do
             for PLATFORM in "${PLATFORMS[@]}"; do 
-              echo "FROM --platform=${PLATFORM} ${SRC_IMAGE}:${TAG}"
+              echo "FROM --platform=${PLATFORM} ${SRC_IMAGE}:${TAG}" > Dockerfile.tmp
+              docker buildx build \
+                --push \
+                --platform "${PLATFORM}" \
+                --tag "${TARGET_IMAGE}:${TAG}" \
+                --file ./Dockerfile.tmp .
             done
           done
           
-          exit 0
-          
-          set -e
-  
-          DOCKERHUB_USERNAME=${{ inputs.dockerhub-username }}
-          DOCKERHUB_PASSWORD=${{ inputs.dockerhub-password }}
-          DOCKERHUB_REPO=${{ inputs.dockerhub-repo }}
-          DOCKER_DEST_REGISTRY=${{ inputs.dest-registry }}
-          DOCKER_DEST_REPO=${{ inputs.dest-repo }}
-  
-          PUSH_FLAG="--push"
-  
-          function get_platforms() {
-            local images=${1}
-            platforms=""
-            for image in $images; do
-              _jq() {
-                echo "${image}" | base64 --decode | jq -r "${1}"
-              }
-              os=$(_jq '.os')
-              arch=$(_jq '.architecture')
-              variant=$(_jq '.variant')
-              platform="$os/$arch"
-              if [ -n "$variant" ] && [ "$variant" != "null" ]; then
-                platform="$platform/$variant"
-              fi
-              if [ -n "$platforms" ]; then
-                platforms="$platforms,"
-              fi
-              platforms="$platforms$platform"
-            done
-            echo "$platforms"
-          }
-  
-          TOKEN=$(curl -s -H "Content-Type: application/json" -X POST -d '{"username": "'${DOCKERHUB_USERNAME}'", "password": "'${DOCKERHUB_PASSWORD}'"}' https://hub.docker.com/v2/users/login/ | jq -r .token)
-          if [ -z "${TOKEN}" -o "${TOKEN}" == "null" ]; then
-            echo >&2 "error: cannot retrieve token"
-            exit 1
-          fi
-  
-          TAG_LIST=$(curl -s -H "Authorization: Bearer ${TOKEN}" "https://hub.docker.com/v2/repositories/${DOCKERHUB_REPO}/tags/?page_size=10000" | jq -rc '.results | reverse | .[] | @base64')
-          for TAG in $TAG_LIST; do
-            _jq() {
-              echo "${TAG}" | base64 --decode | jq -r ${1}
-            }
-            TAG_NAME=$(_jq '.name')
-            TAG_IMAGES=$(echo "$(_jq '.images')" | jq -r '.[] | @base64')
-            TAG_PLATFORMS=$(get_platforms "${TAG_IMAGES}")
-            echo "::group::Copying ${DOCKERHUB_REPO}:${TAG_NAME} to ${DOCKER_DEST_REGISTRY}/${DOCKER_DEST_REPO}"
-            echo "FROM --platform=\${TARGETPLATFORM:-linux/amd64} ${DOCKERHUB_REPO}:${TAG_NAME}" > Dockerfile.tmp
-            docker buildx build \
-              ${PUSH_FLAG} \
-              --platform "${TAG_PLATFORMS}" \
-              --tag "${DOCKER_DEST_REGISTRY}/${DOCKER_DEST_REPO}:${TAG_NAME}" \
-              --file ./Dockerfile.tmp .
-            echo "::endgroup"
-          done

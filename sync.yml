@@ -17,3 +17,5 @@ sync:
     tags:
       allow:
       - "latest"
+      - "nightly"
+      - "v[0-9\.]*"

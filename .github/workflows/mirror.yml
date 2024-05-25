@@ -1,6 +1,8 @@
 name: Mirror
 
 on:
+  schedule:
+    - cron: '37 23 * * *'
   workflow_dispatch:
 
 jobs:

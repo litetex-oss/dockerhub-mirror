@@ -5,13 +5,10 @@ creds:
     user: "{{env \"DOCKERHUB_USER\"}}"
     pass: "{{env \"DOCKERHUB_TOKEN\"}}"
 defaults:
-  ratelimit:
-    min: 100
-    retry: 15m
   parallel: 2
 sync:
   - source: ghcr.io/gethomepage/homepage
-    target: litetex/homepage
+    target: litetex/ghcr.gethomepage.homepage
     type: repository
     tags:
       allow:

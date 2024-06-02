@@ -14,7 +14,7 @@ sync:
       allow:
       - "latest"
       - "nightly"
-      - "v[0-9\\.]*"
+      - "v[0-9\.]*"
   - source: ghcr.io/zitadel/zitadel
     target: litetex/ghcr.zitadel.zitadel
     type: repository
@@ -22,3 +22,10 @@ sync:
       allow:
       - "latest"
       - "latest-debug"
+      - "v[0-9\.]*"
+      deny:
+      # Ignore everything before 2.50
+      - "v2\.[1-4]?[0-9]\..*"
+      # Ignore v1 series
+      - "v1\..*"
+      

@@ -4,6 +4,7 @@ creds:
   - registry: docker.io
     user: "{{env \"DOCKERHUB_USER\"}}"
     pass: "{{env \"DOCKERHUB_TOKEN\"}}"
+  - registry: dock.mau.dev
 defaults:
   parallel: 2
 sync:
@@ -29,3 +30,10 @@ sync:
       # Ignore v1 series
       - "v1\\..*"
       - "v1"
+  - source: dock.mau.dev/mautrix/discord
+    target: litetex/mau.mautrix.discord
+    tags:
+      allow:
+      - "latest"
+      - "v[0-9\\.]*"
+        

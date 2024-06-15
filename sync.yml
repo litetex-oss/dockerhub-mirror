@@ -45,9 +45,9 @@ sync:
       - "latest"
       - "v[0-9\\.]*"
   - source: dock.mau.dev/mautrix/signal
-      target: litetex/mau.mautrix.signal
-      type: repository
-      tags:
-        allow:
-        - "latest"
-        - "v[0-9\\.]*"
+    target: litetex/mau.mautrix.signal
+    type: repository
+    tags:
+      allow:
+      - "latest"
+      - "v[0-9\\.]*"

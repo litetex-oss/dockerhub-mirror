@@ -1,7 +1,9 @@
 [![Mirror](https://github.com/litetex-oss/homepage-docker-mirror/actions/workflows/mirror.yml/badge.svg)](https://github.com/litetex-oss/homepage-docker-mirror/actions/workflows/mirror.yml)
 
-# dockerhub-mirror
-DockerHub mirroring code for various ghcr.io images that can't be fetched as [GitHub is still figuring out how IPv6 works](https://github.com/orgs/community/discussions/10539)
+# Dockerhub Mirror
+DockerHub mirroring code for various images, that are mirrored as
+* they can't be fetched via IPv6 (Example: ghcr.io as [GitHub is still figuring out how IPv6 works](https://github.com/orgs/community/discussions/10539))
+* they are hosted on a single server instance (availability) with an unmeaningful UI
  
 | Project | DockHub | Related |
 | --- | --- | --- |

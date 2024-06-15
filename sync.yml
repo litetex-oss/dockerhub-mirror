@@ -32,6 +32,7 @@ sync:
       - "v1"
   - source: dock.mau.dev/mautrix/discord
     target: litetex/mau.mautrix.discord
+    type: repository
     tags:
       allow:
       - "latest"

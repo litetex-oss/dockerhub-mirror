@@ -51,3 +51,10 @@ sync:
       allow:
       - "latest"
       - "v[0-9\\.]*"
+  - source: registry.gitlab.com/nulide/findmydeviceserver
+    target: litetex/gl.nulide.findmydeviceserver
+    type: repository
+    tags:
+      allow:
+      - "latest"
+      - "v[0-9\\.]*"

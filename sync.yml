@@ -16,6 +16,15 @@ sync:
       - "latest"
       - "nightly"
       - "v[0-9\\.]*"
+  - source: ghcr.io/mollyim/mollysocket
+    target: litetex/ghcr.mollyim.mollysocket
+    type: repository
+    tags:
+      allow:
+      - "latest"
+      - "latest-alpine"
+      - "[0-9\\.]*"
+      - "[0-9\\.]*-alpine"
   - source: ghcr.io/zitadel/zitadel
     target: litetex/ghcr.zitadel.zitadel
     type: repository

@@ -7,7 +7,6 @@ DockerHub mirroring code for various images, that are mirrored as
  
 | Project | DockerHub | Related |
 | --- | --- | --- |
-| ~[gethomepage/homepage](https://github.com/gethomepage/homepage)~ | [![DockerHub](https://img.shields.io/docker/pulls/litetex/ghcr.gethomepage.homepage.svg?logo=docker&logoColor=white&color=blue)](https://hub.docker.com/r/litetex/ghcr.gethomepage.homepage) | ~https://github.com/gethomepage/homepage/discussions/3527~<br/>DEPRECATED<br/>Use [gethomepage/homepage](https://hub.docker.com/r/gethomepage/homepage) instead |
 | [mollyim/mollysocket](https://github.com/mollyim/mollysocket) | [![DockerHub](https://img.shields.io/docker/pulls/litetex/ghcr.mollyim.mollysocket.svg?logo=docker&logoColor=white&color=blue)](https://hub.docker.com/r/litetex/ghcr.mollyim.mollysocket) | https://github.com/mollyim/mollysocket/issues/68 |
 | [zitadel/zitadel](https://github.com/zitadel/zitadel) | [![DockerHub](https://img.shields.io/docker/pulls/litetex/ghcr.zitadel.zitadel.svg?logo=docker&logoColor=white&color=blue)](https://hub.docker.com/r/litetex/ghcr.zitadel.zitadel) | https://github.com/zitadel/zitadel/discussions/8061 |
 | [mautrix/discord](https://github.com/mautrix/discord) | [![DockerHub](https://img.shields.io/docker/pulls/litetex/mau.mautrix.discord.svg?logo=docker&logoColor=white&color=blue)](https://hub.docker.com/r/litetex/mau.mautrix.discord) | |

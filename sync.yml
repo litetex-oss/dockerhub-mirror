@@ -8,14 +8,6 @@ creds:
 defaults:
   parallel: 2
 sync:
-  - source: ghcr.io/gethomepage/homepage
-    target: litetex/ghcr.gethomepage.homepage
-    type: repository
-    tags:
-      allow:
-      - "latest"
-      - "nightly"
-      - "v[0-9\\.]*"
   - source: ghcr.io/mollyim/mollysocket
     target: litetex/ghcr.mollyim.mollysocket
     type: repository

@@ -31,6 +31,16 @@ sync:
       # Ignore v1 series
       - "v1\\..*"
       - "v1"
+  - source: ghcr.io/etkecc/synapse-admin
+    target: litetex/ghcr.etkecc.synapse-admin
+    type: repository
+    tags:
+      allow:
+      - "latest"
+      - "v[0-9\\.]*-.*"
+      deny:
+      # Ignore everything before v0.10.3-etke30
+      - "v0\\.10\\.3-etke[0-2]?[0-9]$"
   - source: dock.mau.dev/mautrix/discord
     target: litetex/mau.mautrix.discord
     type: repository
@@ -59,3 +69,4 @@ sync:
       allow:
       - "latest"
       - "v[0-9\\.]*"
+

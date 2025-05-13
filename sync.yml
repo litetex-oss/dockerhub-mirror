@@ -52,11 +52,10 @@ sync:
       allow:
       - "latest"
       - "v[0-9\\.]*"
-  - source: registry.gitlab.com/nulide/findmydeviceserver
-    target: litetex/gl.nulide.findmydeviceserver
+  - source: registry.gitlab.com/fmd-foss/fmd-server
+    target: litetex/gl.fmd-foss.fmd-server
     type: repository
     tags:
       allow:
       - "latest"
       - "v[0-9\\.]*"
-

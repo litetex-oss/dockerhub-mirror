@@ -28,6 +28,10 @@ sync:
       - "latest-alpine"
       - "[0-9\\.]*"
       - "[0-9\\.]*-alpine"
+      deny:
+      # Ignore everything before 1.4
+      - "1\\.[0-4]"
+      - "1\\.[0-4]\\..*"
   - source: ghcr.io/wg-easy/wg-easy
     target: litetex/ghcr.wg-easy.wg-easy
     type: repository
@@ -49,9 +53,12 @@ sync:
       - "latest-debug"
       - "v[0-9\\.]*"
       deny:
-      # Ignore everything before 3.3
-      - "v3\\.[0-2]\\..*"
-      # Ignore everything before 2.70
+      # Ignore everything before 4.3
+      - "v4\\.[0-2]\\..*"
+      # Ignore everything before 3.4
+      - "v3\\.[0-3]\\..*"
+      # Ignore everything before 2.71
+      - "v2\\.70\\..*"
       - "v2\\.[1-6]?[0-9]\\..*"
       # Ignore v1 series
       - "v1\\..*"
@@ -63,6 +70,11 @@ sync:
       allow:
       - "latest"
       - "v[0-9\\.]*"
+      deny:
+      # Ignore everything before 0.7
+      - "v0\\.[0-6]\\..*"
+      # Accidental
+      - "v2"
   - source: dock.mau.dev/mautrix/whatsapp
     target: litetex/mau.mautrix.whatsapp
     type: repository
@@ -70,6 +82,11 @@ sync:
       allow:
       - "latest"
       - "v[0-9\\.]*"
+      deny:
+      # Ignore everything before 0.2510
+      - "v0\\.[0-8]\\..*"
+      # Accidental
+      - "v2"
   - source: dock.mau.dev/mautrix/signal
     target: litetex/mau.mautrix.signal
     type: repository
@@ -77,6 +94,12 @@ sync:
       allow:
       - "latest"
       - "v[0-9\\.]*"
+      deny:
+      # Ignore everything before 0.2510
+      - "v0\\.1[0-2]\\..*"
+      - "v0\\.[0-9]\\..*"
+      # Accidental
+      - "v2"
   - source: registry.gitlab.com/fmd-foss/fmd-server
     target: litetex/gl.fmd-foss.fmd-server
     type: repository
@@ -84,3 +107,6 @@ sync:
       allow:
       - "latest"
       - "v[0-9\\.]*"
+      deny:
+      # Ignore everything before 0.11
+      - "v0\\.10\\..*"

@@ -8,17 +8,6 @@ creds:
 defaults:
   parallel: 2
 sync:
-  - source: ghcr.io/cry-inc/dmarc-report-viewer
-    target: litetex/ghcr.cry-inc.dmarc-report-viewer
-    type: repository
-    tags:
-      allow:
-      - "latest"
-      - "[0-9\\.]*"
-      deny:
-      # Ignore everything before 2.2
-      - "2\\.[0-1]\\..*"
-      - "1\\..*"
   - source: ghcr.io/mollyim/mollysocket
     target: litetex/ghcr.mollyim.mollysocket
     type: repository

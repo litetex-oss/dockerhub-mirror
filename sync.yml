@@ -10,6 +10,10 @@ defaults:
 sync:
   - source: ghcr.io/google/cadvisor
     target: litetex/ghcr.google.cadvisor
+    tags:
+      allow:
+      - "latest"
+      - "v[0-9\\.]*"
     type: repository
   - source: ghcr.io/mollyim/mollysocket
     target: litetex/ghcr.mollyim.mollysocket

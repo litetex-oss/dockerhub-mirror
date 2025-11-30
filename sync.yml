@@ -8,6 +8,9 @@ creds:
 defaults:
   parallel: 2
 sync:
+  - source: ghcr.io/google/cadvisor
+    target: litetex/ghcr.google.cadvisor
+    type: repository
   - source: ghcr.io/mollyim/mollysocket
     target: litetex/ghcr.mollyim.mollysocket
     type: repository

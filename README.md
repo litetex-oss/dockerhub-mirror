@@ -7,9 +7,9 @@ DockerHub mirroring code for various images, that are mirrored as
  
 | Project | DockerHub | Related |
 | --- | --- | --- |
+| [element-hq/lk-jwt-service](https://github.com/element-hq/lk-jwt-service) | [![DockerHub](https://img.shields.io/docker/pulls/litetex/ghcr.element-hq.lk-jwt-service.svg?logo=docker&logoColor=white&color=blue)](https://hub.docker.com/r/litetex/ghcr.element-hq.lk-jwt-service) | https://github.com/element-hq/lk-jwt-service/issues/153 |
 | [google/cadvisor](https://github.com/google/cadvisor) | [![DockerHub](https://img.shields.io/docker/pulls/litetex/ghcr.google.cadvisor.svg?logo=docker&logoColor=white&color=blue)](https://hub.docker.com/r/litetex/ghcr.google.cadvisor) | https://github.com/google/cadvisor/issues/3749 |
 | [mollyim/mollysocket](https://github.com/mollyim/mollysocket) | [![DockerHub](https://img.shields.io/docker/pulls/litetex/ghcr.mollyim.mollysocket.svg?logo=docker&logoColor=white&color=blue)](https://hub.docker.com/r/litetex/ghcr.mollyim.mollysocket) | https://github.com/mollyim/mollysocket/issues/68 |
-| [wg-easy/wg-easy](https://github.com/wg-easy/wg-easy) (Deprecated) | [![DockerHub](https://img.shields.io/docker/pulls/litetex/ghcr.wg-easy.wg-easy.svg?logo=docker&logoColor=white&color=blue)](https://hub.docker.com/r/litetex/ghcr.wg-easy.wg-easy) | https://github.com/wg-easy/wg-easy/issues/2152 |
 | [zitadel/zitadel](https://github.com/zitadel/zitadel) | [![DockerHub](https://img.shields.io/docker/pulls/litetex/ghcr.zitadel.zitadel.svg?logo=docker&logoColor=white&color=blue)](https://hub.docker.com/r/litetex/ghcr.zitadel.zitadel) | https://github.com/zitadel/zitadel/discussions/8061 |
 | [mautrix/discord](https://github.com/mautrix/discord) | [![DockerHub](https://img.shields.io/docker/pulls/litetex/mau.mautrix.discord.svg?logo=docker&logoColor=white&color=blue)](https://hub.docker.com/r/litetex/mau.mautrix.discord) | |
 | [mautrix/whatsapp](https://github.com/mautrix/whatsapp) | [![DockerHub](https://img.shields.io/docker/pulls/litetex/mau.mautrix.whatsapp.svg?logo=docker&logoColor=white&color=blue)](https://hub.docker.com/r/litetex/mau.mautrix.whatsapp) | |

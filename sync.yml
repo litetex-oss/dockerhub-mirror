@@ -8,6 +8,15 @@ creds:
 defaults:
   parallel: 2
 sync:
+  - source: ghcr.io/element-hq/lk-jwt-service
+    target: litetex/ghcr.element-hq.lk-jwt-service
+    tags:
+      allow:
+      - "latest"
+      - "[0-9\\.]*"
+      deny:
+      # Ignore everything before 0.3
+      - "0\\.[0-3]\\..*"
   - source: ghcr.io/google/cadvisor
     target: litetex/ghcr.google.cadvisor
     tags:

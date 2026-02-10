@@ -28,18 +28,6 @@ sync:
       # Ignore everything before 1.4
       - "1\\.[0-4]"
       - "1\\.[0-4]\\..*"
-  - source: ghcr.io/wg-easy/wg-easy
-    target: litetex/ghcr.wg-easy.wg-easy
-    type: repository
-    tags:
-      allow:
-      - "latest"
-      - "[0-9\\.]*"
-      deny:
-      # Ignore everything before 14
-      - "[0-9]"
-      - "1[0-3]"
-      - "1.0"
   - source: ghcr.io/zitadel/zitadel
     target: litetex/ghcr.zitadel.zitadel
     type: repository

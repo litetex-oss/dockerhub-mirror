@@ -10,6 +10,7 @@ defaults:
 sync:
   - source: ghcr.io/element-hq/lk-jwt-service
     target: litetex/ghcr.element-hq.lk-jwt-service
+    type: repository
     tags:
       allow:
       - "latest"
@@ -19,11 +20,11 @@ sync:
       - "0\\.[0-3]\\..*"
   - source: ghcr.io/google/cadvisor
     target: litetex/ghcr.google.cadvisor
+    type: repository
     tags:
       allow:
       - "latest"
       - "[0-9\\.]*"
-    type: repository
   - source: ghcr.io/mollyim/mollysocket
     target: litetex/ghcr.mollyim.mollysocket
     type: repository
